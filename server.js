@@ -40,4 +40,9 @@ io.on('connection', socket=>{
 
 app.use(express.static(path.join(__dirname,'public')));
 
-server.listen(3000, ()=> "Your port is running at 3000");
+const PORT = process.env.PORT || 80;
+
+server.listen(PORT, () =>
+{
+    console.log(`Server is running at ${PORT}`);
+});
